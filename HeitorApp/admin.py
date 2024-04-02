@@ -14,6 +14,12 @@ class ProdutoAdmin(admin.ModelAdmin):
     search_fields = ['nome_do_produto']
     filter_horizontal = ['fornecedor']
 
+class CategoriaAdmin(admin.ModelAdmin):
+    list_display = ['id', 'nome_da_categoria']
+    list_display_links = ['id', 'nome_da_categoria']
+    search_fields = ['nome_da_categoria']
+
+
 admin.site.register(Produto, ProdutoAdmin)
-admin.site.register(Categoria)
+admin.site.register(Categoria, CategoriaAdmin)
 admin.site.register(Fornecedor)
